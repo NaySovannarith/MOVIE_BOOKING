@@ -1,9 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:movie_booking/module/components/color/header.dart';
 import 'package:movie_booking/module/other/page/about_us.dart';
 import 'package:movie_booking/module/other/page/condition.dart';
 import 'package:movie_booking/module/other/page/contact_us.dart';
+import 'package:movie_booking/module/other/page/language.dart';
 import 'package:movie_booking/module/other/page/news.dart';
 import 'package:movie_booking/module/other/page/privacy.dart';
 import 'package:movie_booking/module/other/widget/build_section.dart';
@@ -30,7 +32,7 @@ class OtherPage extends StatelessWidget {
               backgroundColor: Colors.transparent,
               elevation: 0.5,
               title: const Text(
-                "Account",
+                "account",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
@@ -50,10 +52,10 @@ class OtherPage extends StatelessWidget {
         children: [
           SizedBox(height: 20),
           // Account Section
-          buildSectionTitle("Account"),
+          buildSectionTitle("account".tr()),
           buildListTile(
             icon: Ionicons.person,
-            title: "Profile",
+            title: "profile".tr(),
             onTap: () {
               Navigator.push(
                 context,
@@ -63,13 +65,22 @@ class OtherPage extends StatelessWidget {
           ),
           SizedBox(height: 20),
           // Languages
-          buildSectionTitle("Languages"),
-          buildListTile(icon: Ionicons.earth, title: "English"),
+          buildSectionTitle('languages'.tr()),
+          buildListTile(
+            icon: Ionicons.earth,
+            title: "select_language".tr(),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const LanguagePage()),
+              );
+            },
+          ),
           SizedBox(height: 20),
-          buildSectionTitle("What's new?"),
+          buildSectionTitle("whats_new".tr()),
           buildListTile(
             icon: Ionicons.newspaper,
-            title: "News & Activity",
+            title: 'news'.tr(),
             onTap: () {
               Navigator.push(
                 context,
@@ -80,35 +91,41 @@ class OtherPage extends StatelessWidget {
           SizedBox(height: 20),
 
           // Notifications
-          buildSectionTitle("Notifications"),
+          buildSectionTitle("notifications".tr()),
           buildListTile(
             icon: Ionicons.notifications,
-            title: "Notifications",
-            onTap: () {
-              
-            },
+            title: "notifications".tr(),
+            onTap: () {},
           ),
           SizedBox(height: 20),
           // About Us
-          buildSectionTitle("About us"),
+          buildSectionTitle("about_us".tr()),
           SizedBox(height: 10),
-          buildListTile(icon: Ionicons.person, title: "About us", onTap: () {
+          buildListTile(
+            icon: Ionicons.person,
+            title: "about_us".tr(),
+            onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const AboutUs()),
               );
-          }),
+            },
+          ),
           SizedBox(height: 10),
-          buildListTile(icon: Ionicons.call, title: "Contact us", onTap: () {
+          buildListTile(
+            icon: Ionicons.call,
+            title: "contact_us".tr(),
+            onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const ContactUs()),
               );
-          }),
+            },
+          ),
           SizedBox(height: 10),
           buildListTile(
             icon: Ionicons.shield_checkmark,
-            title: "Privacy Policy",
+            title: "privacy_policy".tr(),
             onTap: () {
               Navigator.push(
                 context,
@@ -119,31 +136,18 @@ class OtherPage extends StatelessWidget {
           SizedBox(height: 10),
           buildListTile(
             icon: Ionicons.document_text,
-            title: "Term & Conditions",
+            title: "terms_conditions".tr(),
             onTap: () {
-                Navigator.push(
+              Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const Condition()),
               );
             },
           ),
           SizedBox(height: 10),
-          buildListTile(icon: Ionicons.log_out, title: "Logout"),
+          buildListTile(icon: Ionicons.log_out, title: "logout".tr()),
         ],
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   backgroundColor: Colors.black,
-      //   selectedItemColor: Colors.red,
-      //   unselectedItemColor: Colors.white54,
-      //   type: BottomNavigationBarType.fixed,
-      //   items: const [
-      //     BottomNavigationBarItem(icon: Icon(Ionicons.home), label: "Home"),
-      //     BottomNavigationBarItem(icon: Icon(Ionicons.pricetags), label: "Offers"),
-      //     BottomNavigationBarItem(icon: Icon(Ionicons.location), label: "Cinema"),
-      //     BottomNavigationBarItem(icon: Icon(Ionicons.fast_food), label: "F&B"),
-      //     BottomNavigationBarItem(icon: Icon(Ionicons.apps), label: "More"),
-      //   ],
-      // ),
     );
   }
 }

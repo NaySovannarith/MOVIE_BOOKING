@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_booking/data/movie_data.dart';
 import 'package:movie_booking/data/view_model/movie_list_view_model.dart';
@@ -42,7 +43,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final movies = isNowShowing ? nowShowingMovies : comingSoonMovies;
+    //final mo  vies = isNowShowing ? nowShowingMovies : comingSoonMovies;
 
     return Scaffold(
       //New Header
@@ -51,11 +52,13 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         title: Text(
-          'Hey narith',
+          "MovieKH".toUpperCase(),
           style: const TextStyle(
-            color: Colors.white,
+            color: Color.fromARGB(255, 95, 1, 1),
             fontSize: 20,
+            fontStyle: FontStyle.italic,
             fontWeight: FontWeight.bold,
+            decoration: TextDecoration.underline,
           ),
         ),
         actions: [
@@ -108,37 +111,16 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 20),
 
               // Posters Title
-              const Text(
-                "POSTERS",
+              Text(
+                "poster".tr(),
                 style: TextStyle(
                   color: Color.fromARGB(255, 141, 141, 141),
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-
               const SizedBox(height: 12),
-
-              // Horizontal Poster Carousel
-              // Column(
-              //   children: [
-              //     SizedBox(
-              //       height: 420,
-              //       child: PageView.builder(
-              //         controller: _posterPageController,
-              //         itemCount: posterImages.length,
-              //         itemBuilder: (context, index) {
-              //           return PosterCard(img: posterImages[index]);
-              //         },
-              //       ),
-              //     ),
-              //     const SizedBox(height: 12),
-              // PageIndicetor(
-              //   posterPageController: _posterPageController,
-              //   posterImages: posterImages,
-              // ),
-              //   ],
-              // ),
+              // Poster Slider
               PosterSlider(),
 
               const SizedBox(height: 30),
@@ -152,7 +134,7 @@ class _HomePageState extends State<HomePage> {
                       handleMovieTabChange();
                     },
                     child: tabButton(
-                      text: "Now showing",
+                      text: "nowshowing".tr(),
                       isActive: isNowShowing,
                     ),
                   ),
@@ -163,7 +145,7 @@ class _HomePageState extends State<HomePage> {
                       handleMovieTabChange();
                     },
                     child: tabButton(
-                      text: "Coming Soon",
+                      text: "comingsoon".tr(),
                       isActive: !isNowShowing,
                     ),
                   ),
@@ -210,8 +192,8 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 10),
 
               // Promote section
-              const Text(
-                "Promotions",
+              Text(
+                "promotion".tr(),
                 style: TextStyle(
                   color: Color.fromARGB(255, 141, 141, 141),
                   fontSize: 20,

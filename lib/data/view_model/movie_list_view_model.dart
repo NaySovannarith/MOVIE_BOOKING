@@ -118,6 +118,39 @@ class MovieListViewModel {
         genres: ["Animation", "Action"],
         rating: "PG",
       ),
+      Movie(
+        id: 9,
+        title: "Shang-Chi and the Legend of the Ten Rings",
+        description: "A Marvel superhero film.",
+        posterUrl:
+            "https://lumiere-a.akamaihd.net/v1/images/p_shangchiandthelegendofthetenringshomeentupdate_22055_7b62fa67.jpeg?region=0%2C0%2C540%2C800",
+        releaseDate: "2021-09-03",
+        director: "Destin Daniel Cretton",
+        genres: ["Action", "Adventure"],
+        rating: "PG-13",
+      ),
+      Movie(
+        id: 10,
+        title: "Eternals",
+        description: "A Marvel superhero film.",
+        posterUrl:
+            "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR1OPVlB_YAPS_96yXtg9spl9AHuPjVISGDs9xnjU-UsgSN81p1oiyziNeS5F0MtCMXk2IW",
+        releaseDate: "2021-11-05",
+        director: "Chloé Zhao",
+        genres: ["Action", "Adventure"],
+        rating: "PG-13",
+      ),
+      Movie(
+        id: 11,
+        title: "SUPERGIRL",
+        description: "fefwef",
+        posterUrl:
+            "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRdHIhqHgvLJ5xgHWlw-EPV7Ga9Z4aqsFSkXthUxcc7JmSb427FRR3_x605UoWQ9uwYynwozQ",
+        releaseDate: "2026-03-23",
+        director: "idk",
+        genres: ["Sci-Fi", "Adventure"],
+        rating: "PG-13",
+      ),
     ];
   }
 

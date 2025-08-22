@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:movie_booking/module/home/home_page.dart';
@@ -7,7 +8,6 @@ import 'package:movie_booking/module/location/location_page.dart';
 import 'package:movie_booking/module/promotion/promotion_page.dart';
 import 'package:movie_booking/module/other/other_page.dart';
 import 'package:movie_booking/module/tickets/ticket_page.dart';
-import 'package:movie_booking/module/profile/profile_page.dart';
 
 class CustomNavBar extends StatefulWidget {
   const CustomNavBar({super.key});
@@ -24,7 +24,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
   );
   static const List<Widget> _page = [
     HomePage(),
-    PromotionPage(),
+    PromotePage(),
     TicketPage(),
     LocationPage(),
     OtherPage(),
@@ -62,11 +62,11 @@ class _CustomNavBarState extends State<CustomNavBar> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        _buildNavItem(Icons.home, "Home", 0),
-                        _buildNavItem(localOfferSharp, "Promotion", 1),
-                        _buildNavItem(Icons.confirmation_num, "Tickets", 2),
-                        _buildNavItem(Icons.location_on, "Location", 3),
-                        _buildNavItem(Ionicons.apps, "More", 4),
+                        _buildNavItem(Icons.home, "home".tr(), 0),
+                        _buildNavItem(localOfferSharp, tr("promote"), 1),
+                        _buildNavItem(Icons.confirmation_num, "ticket".tr(), 2),
+                        _buildNavItem(Icons.location_on, "location".tr(), 3),
+                        _buildNavItem(Ionicons.apps, "more".tr(), 4),
                       ],
                     ),
                   ),

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_booking/data/location.dart';
 import 'package:movie_booking/module/components/color/header.dart';
@@ -30,8 +31,8 @@ class _LocationPageState extends State<LocationPage> {
         preferredSize: const Size.fromHeight(60),
         child: AppBar(
           flexibleSpace: Container(height: 60, decoration: headerdecoration),
-          title: const Text(
-            'Cinema Locations',
+          title: Text(
+            'cinema_location'.tr(),
             style: TextStyle(
               color: Colors.white,
               fontSize: 14,
